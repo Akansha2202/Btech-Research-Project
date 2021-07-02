@@ -1,0 +1,9 @@
+# Btech-Research-Project
+Road networks are prone to cascading failure which are caused by trafficaccidents or abnormal events. Therefore, the correct identification of crucial nodes, whose failure may cause a dramatic reduction within the roadnetwork transmission efficiency. In recent years, studies on network theoryhave attracted a growing attention. In this report, we present an approachto rank node importance through mining the local taxi’s trajectory data. Wehave used the trajectory data generated from vehicle’s for travel analysis andtraffic analysis. We have build graph for the network and ranked the node onthe basis of time spent by vehicle and number of vehicle crossing that node.
+
+
+## Dataset used
+T-Drive Dataset: T-Drive trajectory dataset that contains a one-week trajec-tories of 10, 357 taxis. The total number of points in this dataset is about 15million and the total distance of the trajectories reaches 9 million kilometers.Each taxi’s location in sampled every 177 seconds on average and it containsa week’s worth of data. The T-drive dataset is only based on Beijing. Theaverage sampling rate is nearly about 177 seconds with a distance of 623meters [1],[2].
+
+[1] T-Drive Dataset: T-Drive trajectory dataset that contains a one-week trajec-tories of 10, 357 taxis. The total number of points in this dataset is about 15million and the total distance of the trajectories reaches 9 million kilometers.Each taxi’s location in sampled every 177 seconds on average and it containsa week’s worth of data. The T-drive dataset is only based on Beijing. Theaverage sampling rate is nearly about 177 seconds with a distance of 623meters
+[2] Yuan, J., Zheng, Y., Zhang, C., Xie, W., Xie, X., Sun, G. and Huang, Y.,2010, November. T-drive: driving directions based on taxi trajectories.In Proceedings of the 18th SIGSPATIAL International conference onadvances in geographic information systems pp. 99-108
