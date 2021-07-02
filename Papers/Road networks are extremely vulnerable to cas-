@@ -1,0 +1,139 @@
+Road networks are extremely vulnerable to cas-
+cading failure caused by traffic accidents or anomalous events.
+Therefore, accurate identification of critical nodes, whose failure
+may cause a dramatic reduction in the road network transmission
+efficiency, is of great significance to traffic management and
+control schemes.
+
+we propose a novel data-driven framework to rank
+node importance through mining from comprehensive vehicle
+trajectory data,
+
+In this framework, we introduce a trip network
+modeled by a tripartite graph to characterize the dynamics
+of the road network. Furthermore, we present two algorithms,
+integrating the origin-destination entropy with flow (ODEF)
+algorithm and the crossroad-rank (CRRank) algorithm, to better
+exploit the information included in the tripartite graph and to
+effectively assess the node importance.
+
+ODEF presents a new global
+centrality measure inspired by information entropy. Moreover,
+it strikes a proper balance between the traffic volume and the centrality of a node to assess its significance,
+
+CRRank is also a variant of the eigenvector centrality measure.
+
+It implicates a mutually reinforcing concept: a heavy-load
+trip is likely to choose popular paths and a popular path is
+likely to be chosen by a heavy-load trip. Similarly, a popular
+path is likely to traverse many important intersections and an
+important intersection is likely to be traversed by many popular
+paths.
+
+
+II. R ELATED W ORK
+
+A. Evaluation of Node Importance
+
+1) the local centrality measure,
+2) global centrality measure, 
+3) eigenvector centrality, and
+4) node removing.
+
+1)))the more direct neighbors a node has, the more important it is.
+	The semi-local centrality considers the number of both direct
+	and indirect neighbors of a node in a limited area.
+
+drawback:not good results
+
+2)))The works in the second
+category sought to evaluate the importance of a node from
+a global network perspective.
+
+betweenness centrality of a node, which is the ===> number of the shortest paths that pass through this node for
+every pair of nodes
+
+drawback:However, it is difficult to apply the global centrality over a
+large scale network due to their inherent high complexity.
+
+3))))The most relevant methods to our work are the third category of
+methods, which consider not only the number of neighboring
+nodes but also their relative importance.
+eg:HITs [10], PageRank [11],
+LeaderRank [12], and SALSA [13]
+
+drawback:due to the homogeneous degree distribution of the road network, these methods cannot be directly applied.
+
+4))))The last category of
+methods evaluates the node importance by following the two
+steps: 1) remove the node from the network, 2) measure the
+decline rate of the network efficiency
+
+drawback:faces the high computing cost, and cannot be extended to large
+networks.
+
+IN ALL WE ARE neglecting some critical structural features
+
+B) DATA DRIVEN ROAD NETWORK
+
+inference model that combined road network data, points of interests,
+and massive taxi trajectories to infer the functional regions in a city was proposed.
+
+dicover the bottleneck of road networks using the corresponding taxi
+trajectories
+
+PCA-based algorithm was presented to identify the link anomalies, and then an optimization technique was used to infer the traffic flow that produced the traffic anomalies
+
+
+FRAMEWORK:
+what is a critical node?
+a node is critical if its failure could lead
+to a dramatic reduction in the transmission efficiency of the
+entire network as well as the failure of numerous other nodes.
+
+the importance of a node can be determined
+by its capacity and centrality
+
+The capacity indicator of a node can be measured approximately by calculating its traffic volume,
+
+A data driven framework based on the comprehensive vehicle trajectories and geographic information of the road network to identify the significant nodes.
+
+FRAMEWORK:
+A. Information Extraction
+(map matching algo)
+GPS trajectories that refer to their geospa-
+tial coordinate readings (longitude and latitude) with their
+sampling timestamps.
+
+
+B.Trip Network Analysis
+To construct the tripartite graph, we need to collect the OD-pairs and paths.All the valid OD-pairs can be obtained according to which region
+the origin road and the destination road of each raw trip are
+falling in.
+
+
+METHODOLOGY:
+A. Tripartite Graph of Trip Network
+
+where S, P and V represent the sets of the nodes
+corresponding to valid OD-pairs, paths, and intersections,
+respectively; |S|, |P| and |V | are the number of nodes in these
+three categories, respectively; W denotes the adjacency matrix
+corresponding to the OD-pair-path edges; the entry w s, p of W
+is the size of flow on path p from OD-pair s; U denotes the
+adjacency matrix corresponding to the path-intersection edge.
+If p contains the intersection v, u p,v equals 1; otherwise, u p,v
+equals 0. Next, we describe the two algorithms for the node
+importance ranking based on the tripartite graph.
+
+
+B.The ODEF Algorithm
+To evaluate the centrality of the nodes and locate
+the traffic hub, we introduce the concept of OD entropy. And
+then we integrate the OD entropy with the traffic flow to calculate importance ratings of each node.
+where entropy means: entropy is a measure of the unpredictability or the amount of information from a message source
+
+
+
+["MapSum", "insert", "sum", "insert", "sum"]
+[[], ["aa",3], ["a"], ["aa",2], ["a"]]
